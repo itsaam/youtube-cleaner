@@ -57,6 +57,12 @@
         shelf.remove();
       }
     });
+
+    document
+      .querySelectorAll("ytd-reel-shelf-renderer")
+      .forEach((shortShelf) => {
+        shortShelf.remove();
+      });
   }
 
   const observer = new MutationObserver(() => {
@@ -65,6 +71,5 @@
 
   observer.observe(document.body, { childList: true, subtree: true });
 
-  // Appel initial
   cleanYouTube();
 })();
